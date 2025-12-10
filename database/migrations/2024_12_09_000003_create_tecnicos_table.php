@@ -14,10 +14,8 @@ return new class extends Migration
         Schema::create('tecnicos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('apellido');
-            $table->string('email')->unique();
-            $table->string('telefono')->nullable();
-            $table->string('departamento')->nullable();
+            $table->string('numero_empleado')->unique();
+            $table->enum('departamento', ['Corte', 'Costura', 'Extras'])->default('Corte');
             $table->boolean('activo')->default(true);
             $table->timestamps();
         });

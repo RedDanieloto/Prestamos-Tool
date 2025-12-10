@@ -26,7 +26,6 @@ class PrestamoController extends Controller
         $validated = $request->validate([
             'tecnico_id' => 'required|exists:tecnicos,id',
             'herramienta_id' => 'required|exists:herramientas,id',
-            'notas' => 'nullable|string',
         ]);
 
         $validated['fecha_prestamo'] = now();

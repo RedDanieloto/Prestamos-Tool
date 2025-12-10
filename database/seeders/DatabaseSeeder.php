@@ -17,80 +17,98 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Crear técnicos de ejemplo
+        // Crear técnicos de ejemplo - Departamento Corte
         Tecnico::create([
-            'nombre' => 'Juan',
-            'apellido' => 'Pérez',
-            'email' => 'juan.perez@empresa.com',
-            'telefono' => '555-0101',
-            'departamento' => 'Mantenimiento',
+            'nombre' => 'Juan Pérez',
+            'numero_empleado' => 'EMP001',
+            'departamento' => 'Corte',
             'activo' => true,
         ]);
 
         Tecnico::create([
-            'nombre' => 'María',
-            'apellido' => 'García',
-            'email' => 'maria.garcia@empresa.com',
-            'telefono' => '555-0102',
-            'departamento' => 'Eléctrica',
+            'nombre' => 'María García',
+            'numero_empleado' => 'EMP002',
+            'departamento' => 'Corte',
+            'activo' => true,
+        ]);
+
+        // Crear técnicos de ejemplo - Departamento Costura
+        Tecnico::create([
+            'nombre' => 'Carlos López',
+            'numero_empleado' => 'EMP003',
+            'departamento' => 'Costura',
             'activo' => true,
         ]);
 
         Tecnico::create([
-            'nombre' => 'Carlos',
-            'apellido' => 'López',
-            'email' => 'carlos.lopez@empresa.com',
-            'telefono' => '555-0103',
-            'departamento' => 'Mecánica',
+            'nombre' => 'Ana Rodríguez',
+            'numero_empleado' => 'EMP004',
+            'departamento' => 'Costura',
             'activo' => true,
         ]);
 
-        // Crear herramientas de ejemplo
+        // Crear técnico - Departamento Extras
+        Tecnico::create([
+            'nombre' => 'Luis Martínez',
+            'numero_empleado' => 'EMP005',
+            'departamento' => 'Extras',
+            'activo' => true,
+        ]);
+
+        // Máquinas
         Herramienta::create([
-            'nombre' => 'Taladro Eléctrico',
-            'codigo' => 'HER-001',
-            'descripcion' => 'Taladro eléctrico industrial 800W',
-            'categoria' => 'Eléctrica',
+            'nombre' => 'Taladro',
+            'categoria' => 'Máquinas',
             'estado' => 'disponible',
         ]);
 
         Herramienta::create([
-            'nombre' => 'Multímetro Digital',
-            'codigo' => 'HER-002',
-            'descripcion' => 'Multímetro digital con pantalla LCD',
-            'categoria' => 'Medición',
+            'nombre' => 'Rotopavela',
+            'categoria' => 'Máquinas',
             'estado' => 'disponible',
         ]);
 
         Herramienta::create([
-            'nombre' => 'Llave Inglesa 12"',
-            'codigo' => 'HER-003',
-            'descripcion' => 'Llave inglesa ajustable 12 pulgadas',
-            'categoria' => 'Mecánica',
+            'nombre' => 'Pulidor',
+            'categoria' => 'Máquinas',
             'estado' => 'disponible',
         ]);
 
         Herramienta::create([
-            'nombre' => 'Soldadora MIG',
-            'codigo' => 'HER-004',
-            'descripcion' => 'Soldadora MIG 220V',
-            'categoria' => 'Soldadura',
+            'nombre' => 'Amoladora',
+            'categoria' => 'Máquinas',
+            'estado' => 'disponible',
+        ]);
+
+        // Herramientas
+        Herramienta::create([
+            'nombre' => 'Martillo',
+            'categoria' => 'Herramientas',
             'estado' => 'disponible',
         ]);
 
         Herramienta::create([
-            'nombre' => 'Calibrador Vernier',
-            'codigo' => 'HER-005',
-            'descripcion' => 'Calibrador Vernier digital 0-150mm',
-            'categoria' => 'Medición',
+            'nombre' => 'Llave Inglesa',
+            'categoria' => 'Herramientas',
             'estado' => 'disponible',
         ]);
 
         Herramienta::create([
-            'nombre' => 'Amoladora Angular',
-            'codigo' => 'HER-006',
-            'descripcion' => 'Amoladora angular 4.5" 750W',
-            'categoria' => 'Eléctrica',
+            'nombre' => 'Destornillador',
+            'categoria' => 'Herramientas',
+            'estado' => 'disponible',
+        ]);
+
+        Herramienta::create([
+            'nombre' => 'Alicate',
+            'categoria' => 'Herramientas',
+            'estado' => 'disponible',
+        ]);
+
+        // Otros
+        Herramienta::create([
+            'nombre' => 'Escalera',
+            'categoria' => 'Otros',
             'estado' => 'disponible',
         ]);
     }

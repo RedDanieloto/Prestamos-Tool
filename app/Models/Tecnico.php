@@ -11,9 +11,7 @@ class Tecnico extends Model
 
     protected $fillable = [
         'nombre',
-        'apellido',
-        'email',
-        'telefono',
+        'numero_empleado',
         'departamento',
         'activo',
     ];
@@ -25,10 +23,5 @@ class Tecnico extends Model
     public function prestamos()
     {
         return $this->hasMany(Prestamo::class);
-    }
-
-    public function getNombreCompletoAttribute()
-    {
-        return "{$this->nombre} {$this->apellido}";
     }
 }

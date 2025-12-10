@@ -14,9 +14,7 @@ return new class extends Migration
         Schema::create('herramientas', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('codigo')->unique();
-            $table->text('descripcion')->nullable();
-            $table->string('categoria')->nullable();
+            $table->enum('categoria', ['Máquinas', 'Herramientas', 'Otros'])->default('Herramientas');
             $table->enum('estado', ['disponible', 'prestada', 'mantenimiento'])->default('disponible');
             $table->timestamps();
         });

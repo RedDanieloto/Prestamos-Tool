@@ -20,38 +20,24 @@
         </div>
 
         <div class="mb-4">
-            <label class="block text-gray-700 font-semibold mb-2">Apellido *</label>
-            <input type="text" name="apellido" value="{{ old('apellido') }}" 
+            <label class="block text-gray-700 font-semibold mb-2">Número de Empleado *</label>
+            <input type="text" name="numero_empleado" value="{{ old('numero_empleado') }}" 
                    class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                   placeholder="ej: EMP001"
                    required>
-            @error('apellido')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-            @enderror
-        </div>
-
-        <div class="mb-4">
-            <label class="block text-gray-700 font-semibold mb-2">Email *</label>
-            <input type="email" name="email" value="{{ old('email') }}" 
-                   class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
-                   required>
-            @error('email')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-            @enderror
-        </div>
-
-        <div class="mb-4">
-            <label class="block text-gray-700 font-semibold mb-2">Teléfono</label>
-            <input type="text" name="telefono" value="{{ old('telefono') }}" 
-                   class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500">
-            @error('telefono')
+            @error('numero_empleado')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
             @enderror
         </div>
 
         <div class="mb-6">
-            <label class="block text-gray-700 font-semibold mb-2">Departamento</label>
-            <input type="text" name="departamento" value="{{ old('departamento') }}" 
-                   class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500">
+            <label class="block text-gray-700 font-semibold mb-2">Departamento *</label>
+            <select name="departamento" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" required>
+                <option value="">Seleccionar departamento</option>
+                <option value="Corte" {{ old('departamento') === 'Corte' ? 'selected' : '' }}>✂️ Corte</option>
+                <option value="Costura" {{ old('departamento') === 'Costura' ? 'selected' : '' }}>🧵 Costura</option>
+                <option value="Extras" {{ old('departamento') === 'Extras' ? 'selected' : '' }}>⭐ Extras</option>
+            </select>
             @error('departamento')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
             @enderror
@@ -68,3 +54,4 @@
     </form>
 </div>
 @endsection
+

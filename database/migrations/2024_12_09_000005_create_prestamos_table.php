@@ -17,7 +17,6 @@ return new class extends Migration
             $table->foreignId('herramienta_id')->constrained('herramientas')->onDelete('cascade');
             $table->timestamp('fecha_prestamo');
             $table->timestamp('fecha_devolucion')->nullable();
-            $table->text('notas')->nullable();
             $table->enum('estado', ['activo', 'devuelto'])->default('activo');
             $table->timestamps();
         });

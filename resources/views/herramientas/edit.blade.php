@@ -21,28 +21,12 @@
         </div>
 
         <div class="mb-4">
-            <label class="block text-gray-700 font-semibold mb-2">Código *</label>
-            <input type="text" name="codigo" value="{{ old('codigo', $herramienta->codigo) }}" 
-                   class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
-                   required>
-            @error('codigo')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-            @enderror
-        </div>
-
-        <div class="mb-4">
-            <label class="block text-gray-700 font-semibold mb-2">Descripción</label>
-            <textarea name="descripcion" rows="3" 
-                      class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500">{{ old('descripcion', $herramienta->descripcion) }}</textarea>
-            @error('descripcion')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-            @enderror
-        </div>
-
-        <div class="mb-4">
-            <label class="block text-gray-700 font-semibold mb-2">Categoría</label>
-            <input type="text" name="categoria" value="{{ old('categoria', $herramienta->categoria) }}" 
-                   class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500">
+            <label class="block text-gray-700 font-semibold mb-2">Categoría *</label>
+            <select name="categoria" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" required>
+                <option value="Máquinas" {{ old('categoria', $herramienta->categoria) === 'Máquinas' ? 'selected' : '' }}>⚙️ Máquinas</option>
+                <option value="Herramientas" {{ old('categoria', $herramienta->categoria) === 'Herramientas' ? 'selected' : '' }}>🔨 Herramientas</option>
+                <option value="Otros" {{ old('categoria', $herramienta->categoria) === 'Otros' ? 'selected' : '' }}>📦 Otros</option>
+            </select>
             @error('categoria')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
             @enderror

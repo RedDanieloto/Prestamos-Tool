@@ -22,9 +22,7 @@ class HerramientaController extends Controller
     {
         $validated = $request->validate([
             'nombre' => 'required|string|max:255',
-            'codigo' => 'required|string|unique:herramientas',
-            'descripcion' => 'nullable|string',
-            'categoria' => 'nullable|string|max:255',
+            'categoria' => 'required|in:Máquinas,Herramientas,Otros',
         ]);
 
         Herramienta::create($validated);
@@ -42,9 +40,7 @@ class HerramientaController extends Controller
     {
         $validated = $request->validate([
             'nombre' => 'required|string|max:255',
-            'codigo' => 'required|string|unique:herramientas,codigo,' . $herramienta->id,
-            'descripcion' => 'nullable|string',
-            'categoria' => 'nullable|string|max:255',
+            'categoria' => 'required|in:Máquinas,Herramientas,Otros',
             'estado' => 'required|in:disponible,prestada,mantenimiento',
         ]);
 

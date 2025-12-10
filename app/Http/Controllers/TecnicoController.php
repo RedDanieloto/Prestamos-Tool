@@ -22,10 +22,8 @@ class TecnicoController extends Controller
     {
         $validated = $request->validate([
             'nombre' => 'required|string|max:255',
-            'apellido' => 'required|string|max:255',
-            'email' => 'required|email|unique:tecnicos',
-            'telefono' => 'nullable|string|max:20',
-            'departamento' => 'nullable|string|max:255',
+            'numero_empleado' => 'required|string|unique:tecnicos',
+            'departamento' => 'required|in:Corte,Costura,Extras',
         ]);
 
         Tecnico::create($validated);
@@ -43,10 +41,8 @@ class TecnicoController extends Controller
     {
         $validated = $request->validate([
             'nombre' => 'required|string|max:255',
-            'apellido' => 'required|string|max:255',
-            'email' => 'required|email|unique:tecnicos,email,' . $tecnico->id,
-            'telefono' => 'nullable|string|max:20',
-            'departamento' => 'nullable|string|max:255',
+            'numero_empleado' => 'required|string|unique:tecnicos,numero_empleado,' . $tecnico->id,
+            'departamento' => 'required|in:Corte,Costura,Extras',
             'activo' => 'boolean',
         ]);
 
